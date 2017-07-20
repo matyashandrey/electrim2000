@@ -10,7 +10,6 @@ html {
     height: 100%;
 }
 
-body,
 h1,
 h2,
 h3,
@@ -22,7 +21,8 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .lead {

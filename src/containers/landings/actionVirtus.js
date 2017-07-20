@@ -43,8 +43,8 @@ class actionVirtus extends Component {
                             </a>
                         </div>
                         <div className="col-lg-4 col-sm-6">
-                            <a href="/img/clients/test2.png" className="portfolio-box">
-                                <img src="/img/clients/test2.png" className="img-responsive" alt=""/>
+                            <a href="/img/clients/test4.png" className="portfolio-box">
+                                <img height='320px' src="/img/clients/test4.png" className="img-responsive" alt=""/>
                                     <div className="portfolio-box-caption">
                                         <div className="portfolio-box-caption-content">
                                             <div className="project-category text-faded">

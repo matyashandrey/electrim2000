@@ -4,27 +4,27 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 
 
-
-
 class Wrapper extends Component {
     constructor(props) {
         super(props);
-        this.state = {fixedMenu : false}
+        this.state = {fixedMenu: false}
     }
-    componentDidMount(){
+
+    componentDidMount() {
         window.addEventListener("scroll", function (event) {
 
             let fixedMenu = +window.scrollY > 100;
 
-            if (this.state.fixedMenu !== fixedMenu){
+            if (this.state.fixedMenu !== fixedMenu) {
                 this.setState({fixedMenu});
             }
         }.bind(this))
     }
+
     render() {
 
         let classMenu = this.state.fixedMenu ?
-            'navbar navbar-default topnav  navbar-fixed-top':
+            'navbar navbar-default topnav  navbar-fixed-top' :
             'navbar navbar-default topnav';
 
         return (
@@ -77,7 +77,43 @@ class Wrapper extends Component {
                 <main className="main">
                     {this.props.children}
                 </main>
-
+                <hr className="primary"/>
+                <div className="container">
+                    <div className="row">
+                            ГЕНПРОЕКТ успішно працює з 2007 року. За 9 років ми придбали величезний досвід в реалізації
+                            складних проектів, великих і комплексних об'єктів.
+                            <br/> Такий собі текст.
+                    </div>
+                    <div className="row padding-7">
+                    </div>
+                </div>
+                <footer>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <ul className="list-inline">
+                                    <li>
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li className="footer-menu-divider">⋅</li>
+                                    <li>
+                                        <a href="#about">About</a>
+                                    </li>
+                                    <li className="footer-menu-divider">⋅</li>
+                                    <li>
+                                        <a href="#services">Services</a>
+                                    </li>
+                                    <li className="footer-menu-divider">⋅</li>
+                                    <li>
+                                        <a href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+                                <p className="copyright text-muted small">Copyright © Your Company 2014. All Rights
+                                    Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         );
     }
