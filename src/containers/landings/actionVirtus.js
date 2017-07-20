@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 
-
 class actionVirtus extends Component {
     constructor(props) {
         super(props);
@@ -206,34 +205,48 @@ class actionVirtus extends Component {
                     <h2 className="section-heading">О нашей компаниии</h2>
                     <hr className="primary"/>
                 </div>
-                <div className="col-lg-4">
-                    <div className="col-lg-3">
-                        <img className="img-circle"
-                             src="/img/guaranty/tools.png"
-                             alt="Generic placeholder image" width="90" height="90"/>
-                    </div>
-                    <div className="col-lg-9">
-                        <h3>Работаем с 2007 года</h3>
-                    </div>
+                <div className="clearfix"/>
+                <div className="row">
+                    <p>Компания Электрим 2000 заявила о себе в 1997 году как первый сертифицированный партнер
+                        международного электротехнического концерна SCHNEIDER ELECTRIC.</p>
+                    <p>Изначальная специализация - проектирование и изготовление по технологии и из комплектующих
+                        SCHNEIDER ELECTRIC низковольтных комплектных устройств и автоматизированных систем
+                        управления.</p>
+                    <p>Сегодня мы проектируем и внедряем инженерные системы, автоматизированные системы управления
+                        технологическими процессами, производим электрооборудование среднего и низкого напряжения. С Вас
+                        - задача любой сложности. С нас - системный подход, оригинальные технические решения и высокий
+                        технико-экономический уровень воплощения каждого проекта в жизнь.</p>
                 </div>
-                <div className="col-lg-4">
-                    <div className="col-lg-3">
-                        <img className="img-circle"
-                             src="/img/guaranty/proffesional.png"
-                             alt="Generic placeholder image" width="90" height="90"/>
+                <div className="row">
+                    <div className="col-lg-4">
+                        <div className="col-lg-3">
+                            <img className="img-circle"
+                                 src="/img/guaranty/tools.png"
+                                 alt="Generic placeholder image" width="90" height="90"/>
+                        </div>
+                        <div className="col-lg-9">
+                            <h3>Работаем с 2007 года</h3>
+                        </div>
                     </div>
-                    <div className="col-lg-9">
-                        <h3>Команда проффесиналов</h3>
+                    <div className="col-lg-4">
+                        <div className="col-lg-3">
+                            <img className="img-circle"
+                                 src="/img/guaranty/proffesional.png"
+                                 alt="Generic placeholder image" width="90" height="90"/>
+                        </div>
+                        <div className="col-lg-9">
+                            <h3>Команда проффесиналов</h3>
+                        </div>
                     </div>
-                </div>
-                <div className="col-lg-4">
-                    <div className="col-lg-3">
-                        <img className="img-circle"
-                             src="/img/guaranty/finish.png"
-                             alt="Generic placeholder image" width="90" height="90"/>
-                    </div>
-                    <div className="col-lg-9">
-                        <h3>Реализованно более ??? поектов</h3>
+                    <div className="col-lg-4">
+                        <div className="col-lg-3">
+                            <img className="img-circle"
+                                 src="/img/guaranty/finish.png"
+                                 alt="Generic placeholder image" width="90" height="90"/>
+                        </div>
+                        <div className="col-lg-9">
+                            <h3>Реализованно более ??? поектов</h3>
+                        </div>
                     </div>
                 </div>
 

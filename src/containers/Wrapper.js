@@ -11,6 +11,8 @@ class Wrapper extends Component {
         this.state = {fixedMenu: false, openMenu : {aboutUs : false, portfolio : false}}
 
         this.openMenu = this.openMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
+
     }
 
     componentDidMount() {
@@ -30,6 +32,17 @@ class Wrapper extends Component {
 
         Object.keys(openMenu).forEach(function (index) {
             openMenu[index] = index === id && openMenu[index] === false ? true : false;
+        })
+
+        this.setState({openMenu});
+    }
+
+    closeMenu(e){
+
+        let openMenu = deepClone(this.state.openMenu);
+
+        Object.keys(openMenu).forEach(function (index) {
+            openMenu[index] = false;
         })
 
         this.setState({openMenu});
@@ -64,8 +77,8 @@ class Wrapper extends Component {
                     <div className="container topnav">
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                                <li className={openMenu.aboutUs ? "dropdown open" : ""}>
-                                    <a data-id="aboutUs" onClick={this.openMenu} href="#about">О компании <span className="caret"></span></a>
+                                <li onMouseLeave={this.closeMenu} onMouseEnter={this.openMenu} className={openMenu.aboutUs ? "dropdown open" : ""}>
+                                    <a data-id="aboutUs" href="#about">О компании <span className="caret"></span></a>
                                     <ul className="dropdown-menu">
                                         <li><a href="#">О Нас</a></li>
                                         <li><a href="#">Лицензии и сертификаты</a></li>
@@ -85,8 +98,8 @@ class Wrapper extends Component {
                                 <li>
                                     <a href="#contact">Электрооборудование</a>
                                 </li>
-                                <li className={openMenu.portfolio ? "dropdown open" : ""}>
-                                    <a data-id="portfolio" onClick={this.openMenu} href="#contact">Портфолио<span className="caret"></span></a>
+                                <li data-id="portfolio" onMouseLeave={this.closeMenu} onMouseEnter={this.openMenu} className={openMenu.portfolio ? "dropdown open" : ""}>
+                                    <a data-id="portfolio"  href="#contact">Портфолио<span className="caret"></span></a>
                                     <ul className="dropdown-menu">
                                         <li><a href="#">Промышленность</a></li>
                                         <li><a href="#">Аграрный сектор</a></li>
@@ -99,7 +112,20 @@ class Wrapper extends Component {
                     </div>
                 </nav>
                 <div className="intro-header">
+                    <div className="container">
 
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="intro-message">
+                                    <h1>Электрим 2000</h1>
+                                    <h3>Комплексные решения по инженерному обеспечению</h3>
+                                    <hr className="intro-divider"/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
                 <main className="main">
