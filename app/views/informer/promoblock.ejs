@@ -1,0 +1,86 @@
+<div class="promo-informer boxed relative text-c">
+    <ul class="slider unstyle">
+        <% for(var i in items) {%>
+        <li class="slider-item hide">
+            <a target="_blank" href="<%= items[i].href %>"> <img src="<%= items[i].img %>" alt="Промо"></a>
+        </li>
+        <% } %>
+    </ul>
+    <ol class="slide-bullets unstyle">
+        <% for(var i in items) {%>
+        <li class="i-block">
+            <a target="_blank" href="javascript:void(0)" class="slide-item" data-id="<%= i %>"></a>
+        </li>
+        <% } %>
+    </ol>
+    <a href="javascript:void(0)" class="carousel-control prev ria" data-action="prev"></a>
+    <a href="javascript:void(0)" class="carousel-control next ria" data-action="next"></a>
+</div>
+
+
+<script type="text/javascript">
+
+    var index = 0;
+    var count = parseInt('<%= count %>');
+    var slide_on = true;
+
+    $('.slide-item').click(function () {
+
+        slide_on = false;
+
+        index = $(this).attr('data-id');
+
+        rebuild(index);
+    });
+
+    $('.carousel-control').click(function () {
+
+        slide_on = false;
+
+        if ($(this).attr('data-action') === 'prev') {
+            index = index > 0 ? index - 1 : count - 1;
+        } else if ($(this).attr('data-action') === 'next') {
+            index = index < +count ? index + 1 : index + 1;
+        }
+
+        rebuild(index);
+    })
+
+    var rebuild = function (index) {
+
+        var indexCurrent = parseInt(index % count);
+
+        $('.slider-item').addClass('hide');
+
+        $('.slider-item').each(function (key, el) {
+            if (indexCurrent === key) {
+                $(el).removeClass('hide');
+            }
+        });
+
+        $('.slide-item').removeClass('active');
+
+        $('.slide-item').each(function (key, el) {
+            if (indexCurrent === key) {
+                $(el).addClass('active');
+            }
+        });
+
+
+        return true;
+    }
+
+    var runSlider = function () {
+        setTimeout(function () {
+            if (slide_on === true) {
+                runSlider();
+                index++;
+                rebuild(index);
+            }
+        }, 5000);
+    }
+
+    rebuild(0);
+    runSlider();
+
+</script>
