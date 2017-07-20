@@ -23,8 +23,8 @@ class actionVirtus extends Component {
                 {'name': 'og:image', 'content': photo_main}
             ]}/>
             <div className="col-lg-8 col-lg-offset-2 text-center">
-                <h2 className="section-heading">Наши проекты</h2>
                 <hr className="primary"/>
+                <h2 className="section-heading">Наши проекты</h2>
             </div>
             <section className="no-padding" id="portfolio">
                 <div className="container-fluid">
@@ -79,8 +79,8 @@ class actionVirtus extends Component {
                 </div>
             </section>
             <div className="col-lg-8 col-lg-offset-2 text-center">
-                <h2 className="section-heading">Электрим 2000 - надежный партнер</h2>
                 <hr className="primary"/>
+                <h2 className="section-heading">Электрим 2000 - надежный партнер</h2>
             </div>
             <div className="row">
                 <div className="col-lg-6">
@@ -144,8 +144,8 @@ class actionVirtus extends Component {
             </div>
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 className="section-heading">Сертификация качества</h2>
                     <hr className="primary"/>
+                    <h2 className="section-heading">Сертификация качества</h2>
                 </div>
                 <section className="no-padding" id="portfolio">
                     <div className="container-fluid">
@@ -202,8 +202,8 @@ class actionVirtus extends Component {
             </div>
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 className="section-heading">О нашей компаниии</h2>
                     <hr className="primary"/>
+                    <h2 className="section-heading">О нашей компаниии</h2>
                 </div>
                 <div className="clearfix"/>
                 <div className="row">
