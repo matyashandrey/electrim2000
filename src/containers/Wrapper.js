@@ -2,12 +2,15 @@ import React from 'react';
 import {Component} from 'react';
 
 import {connect} from 'react-redux';
+import {deepClone} from '../helpers/_Object';
 
 
 class Wrapper extends Component {
     constructor(props) {
         super(props);
-        this.state = {fixedMenu: false}
+        this.state = {fixedMenu: false, openMenu : {aboutUs : false, portfolio : false}}
+
+        this.openMenu = this.openMenu.bind(this);
     }
 
     componentDidMount() {
@@ -21,11 +24,24 @@ class Wrapper extends Component {
         }.bind(this))
     }
 
+    openMenu(e){
+        let {id} =  e.target.dataset;
+        let openMenu = deepClone(this.state.openMenu);
+
+        Object.keys(openMenu).forEach(function (index) {
+            openMenu[index] = index === id && openMenu[index] === false ? true : false;
+        })
+
+        this.setState({openMenu});
+    }
+
     render() {
 
         let classMenu = this.state.fixedMenu ?
             'navbar navbar-default topnav  navbar-fixed-top' :
             'navbar navbar-default topnav';
+
+        let {openMenu = {}} = this.state;
 
         return (
             <div>
@@ -48,8 +64,14 @@ class Wrapper extends Component {
                     <div className="container topnav">
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                                <li>
-                                    <a href="#about">О компании</a>
+                                <li className={openMenu.aboutUs ? "dropdown open" : ""}>
+                                    <a data-id="aboutUs" onClick={this.openMenu} href="#about">О компании <span className="caret"></span></a>
+                                    <ul className="dropdown-menu">
+                                        <li><a href="#">О Нас</a></li>
+                                        <li><a href="#">Лицензии и сертификаты</a></li>
+                                        <li><a href="#">Новости</a></li>
+                                        <li><a href="#">Вакансии</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#services">Проектирование ИС</a>
@@ -63,8 +85,14 @@ class Wrapper extends Component {
                                 <li>
                                     <a href="#contact">Электрооборудование</a>
                                 </li>
-                                <li>
-                                    <a href="#contact">Портфолио</a>
+                                <li className={openMenu.portfolio ? "dropdown open" : ""}>
+                                    <a data-id="portfolio" onClick={this.openMenu} href="#contact">Портфолио<span className="caret"></span></a>
+                                    <ul className="dropdown-menu">
+                                        <li><a href="#">Промышленность</a></li>
+                                        <li><a href="#">Аграрный сектор</a></li>
+                                        <li><a href="#">Строительство</a></li>
+                                        <li><a href="#">Транспортная инфраструктура</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
