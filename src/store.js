@@ -19,10 +19,10 @@ import reducers from './reducers';
 
 export function configureStore(history, initialState, middlewares) {
 
-    let devTools = [];
-    if (typeof document !== 'undefined') {
-        devTools = [ DevTools.instrument() ]
-    }
+    // let devTools = [];
+    // if (typeof document !== 'undefined') {
+    //     devTools = [ DevTools.instrument() ]
+    // }
 
     const store = createStore(
         reducers,
@@ -35,7 +35,7 @@ export function configureStore(history, initialState, middlewares) {
                 ...middlewares
 
             ),
-            ...devTools
+            // ...devTools
         )
     );
 

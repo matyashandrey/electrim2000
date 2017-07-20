@@ -3,14 +3,16 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {Router, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux'
-import {configureStore, DevTools} from './store'
+import {configureStore} from './store'
 import getUserState from './middlewares/getUserState'
 import screenType from './components/ScreenType'
 
 require('es6-promise').polyfill();
 
 
+function logPageView() {
 
+}
 
 
 import routes from './routes';

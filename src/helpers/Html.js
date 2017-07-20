@@ -4,6 +4,8 @@ import serialize from 'serialize-javascript';
 import Helmet from 'react-helmet';
 import config from 'config';
 
+import versionJs from '../../assets.json'
+
 /**
  * Wrapper component containing HTML metadata and boilerplate tags.
  * Used in server-side code only to wrap the string output of the
@@ -19,6 +21,7 @@ class Html extends Component {
         component: PropTypes.node,
         store: PropTypes.object
     };
+
 
     render() {
         const {assets, component, store} = this.props;
@@ -39,28 +42,38 @@ class Html extends Component {
             <html lang="en-us">
             <head>
                 <meta charSet="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 {head.title.toComponent()}
                 {head.meta.toComponent()}
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
-                <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+                <title>Landing Page - Start Bootstrap Theme</title>
 
-                <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-                <link rel="shortcut icon" href="/dist/img/favicon.ico"/>
+                <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
-                <script dangerouslySetInnerHTML={{__html: trackingCode}}/>
+
+                <link href="css/landing-page.css" rel="stylesheet"/>
+
+
+                <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+                      type="text/css"/>
+                <link
+                    href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+                    rel="stylesheet" type="text/css"/>
+
 
             </head>
             <body>
+
 
             <div id="content" dangerouslySetInnerHTML={{__html: content}}/>
             <div id="devtools"/>
             <div id="footer"/>
             <script dangerouslySetInnerHTML={{__html: `window.init=${serialize(store.getState())};`}} charSet="UTF-8"/>
 
-            <script src={`/js/build/vendor.js`} charSet="UTF-8"/>
-            <script src={`/js/build/bundle.js`} charSet="UTF-8"/>
+            <script src={`/js/build/${versionJs.vendor.js}`} charSet="UTF-8"/>
+            <script src={`/js/build/${versionJs.app.js}`} charSet="UTF-8"/>
 
             </body>
             </html>

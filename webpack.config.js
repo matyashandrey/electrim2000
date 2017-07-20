@@ -1,8 +1,5 @@
 'use strict';
 
-// // Набор временных исключений для ESlint
-const ESlintTemporaryExcludes = require('./ESlintTemporaryExcludes')
-	.map((item => __dirname + '/' + item));
 
 const NODE_ENV = process.env.NODE_ENV || 'development',
 	isDevelopment = NODE_ENV === 'development';
@@ -79,7 +76,7 @@ module.exports = {
 		path: __dirname + '/public/js/build',
 		filename: 'bundle_[chunkhash].js',
 	},
-	watch: isDevelopment,
+	// watch: isDevelopment,
 	watchOptions: {
 		//запускати перезбірку через 100 мс після збереження файла. Default 300
 		aggregateTimeout: 100,
@@ -87,17 +84,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			isDevelopment ? {
-					enforce: "pre",
-					test: /\.js$/,
-					exclude: [
-						/node_modules/,
-						__dirname + '/src/components/',
-						...ESlintTemporaryExcludes
-
-					],
-					loader: "eslint-loader",
-				} : {},
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules(?!(\/newbuild_library|\/redux-promise-middleware))/,
