@@ -31,9 +31,6 @@ plugins.push(new webpack.optimize.CommonsChunkPlugin({
 
 
 if (!isDevelopment) {
-
-	app = 'index_production.js';
-
 	plugins.push(new UglifyJSPlugin());
 	plugins.push(new webpack.LoaderOptionsPlugin({minimize: true}));
 	plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
