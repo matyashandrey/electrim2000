@@ -13,7 +13,7 @@ class Wrapper extends Component {
     componentDidMount() {
         window.addEventListener("scroll", function (event) {
 
-            let fixedMenu = +window.scrollY > 100;
+            let fixedMenu = +window.scrollY > 50;
 
             if (this.state.fixedMenu !== fixedMenu) {
                 this.setState({fixedMenu});
@@ -93,23 +93,25 @@ class Wrapper extends Component {
                             <div className="col-lg-12">
                                 <ul className="list-inline">
                                     <li>
-                                        <a href="#">Home</a>
+                                        <a href="#">О компании</a>
                                     </li>
                                     <li className="footer-menu-divider">⋅</li>
                                     <li>
-                                        <a href="#about">About</a>
+                                        <a href="#about">Проектирование ИС</a>
                                     </li>
                                     <li className="footer-menu-divider">⋅</li>
                                     <li>
-                                        <a href="#services">Services</a>
+                                        <a href="#services">АСУ ТП</a>
+                                    </li>
+                                    <li>
+                                        <a href="#services">Электрооборудование</a>
                                     </li>
                                     <li className="footer-menu-divider">⋅</li>
                                     <li>
-                                        <a href="#contact">Contact</a>
+                                        <a href="#contact">Портфолио</a>
                                     </li>
                                 </ul>
-                                <p className="copyright text-muted small">Copyright © Your Company 2014. All Rights
-                                    Reserved</p>
+                                <p className="copyright text-muted small">Copyright © Электрим2000 2017.</p>
                             </div>
                         </div>
                     </div>

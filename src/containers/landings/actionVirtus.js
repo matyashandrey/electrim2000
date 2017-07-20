@@ -29,7 +29,7 @@ class actionVirtus extends Component {
                     <div className="row no-gutter popup-gallery">
                         <div className="col-lg-4 col-sm-6">
                             <a href="/img/clients/test1.jpg" className="portfolio-box">
-                                <img src="/img/clients/test1.jpg" className="img-responsive" alt=""/>
+                                <img src="/img/clients/prez.jpg" className="img-responsive" alt=""/>
                                     <div className="portfolio-box-caption">
                                         <div className="portfolio-box-caption-content">
                                             <div className="project-category text-faded">
@@ -44,7 +44,7 @@ class actionVirtus extends Component {
                         </div>
                         <div className="col-lg-4 col-sm-6">
                             <a href="/img/clients/test4.png" className="portfolio-box">
-                                <img height='320px' src="/img/clients/test4.png" className="img-responsive" alt=""/>
+                                <img height='320px' src="/img/clients/mandarin_plaza.jpg" className="img-responsive" alt=""/>
                                     <div className="portfolio-box-caption">
                                         <div className="portfolio-box-caption-content">
                                             <div className="project-category text-faded">
@@ -59,7 +59,7 @@ class actionVirtus extends Component {
                         </div>
                         <div className="col-lg-4 col-sm-6">
                             <a href="/img/clients/test1.jpg" className="portfolio-box">
-                                <img src="/img/clients/test1.jpg" className="img-responsive" alt=""/>
+                                <img src="/img/clients/nemiroff.jpg" className="img-responsive" alt=""/>
                                     <div className="portfolio-box-caption">
                                         <div className="portfolio-box-caption-content">
                                             <div className="project-category text-faded">
