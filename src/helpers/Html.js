@@ -55,7 +55,6 @@ class Html extends Component {
 
                 <link href="css/landing-page.css" rel="stylesheet"/>
 
-
                 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
                       type="text/css"/>
                 <link
@@ -71,6 +70,7 @@ class Html extends Component {
             <div id="devtools"/>
             <div id="footer"/>
             <script dangerouslySetInnerHTML={{__html: `window.init=${serialize(store.getState())};`}} charSet="UTF-8"/>
+
 
             <script src={`/js/build/${versionJs.vendor.js}`} charSet="UTF-8"/>
             <script src={`/js/build/${versionJs.app.js}`} charSet="UTF-8"/>

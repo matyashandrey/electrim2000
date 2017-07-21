@@ -3,7 +3,7 @@ import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 
 
-import actionVirtusPage from './containers/landings/actionVirtus';
+import IndexPage from './containers/Index';
 
 
 import Wrapper from './containers/Wrapper';
@@ -11,7 +11,7 @@ import Wrapper from './containers/Wrapper';
 
 export default  (
 	<Route path="/" component={Wrapper}>
-		<IndexRoute component={actionVirtusPage}/>
-		<Route path="*" component={actionVirtusPage}/>
+		<IndexRoute component={IndexPage}/>
+		<Route path="*" component={IndexPage}/>
 	</Route>
 );
