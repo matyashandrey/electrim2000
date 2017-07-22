@@ -3,6 +3,7 @@ import {Component} from 'react';
 
 import {connect} from 'react-redux';
 import {deepClone} from '../helpers/_Object';
+import {Link} from 'react-router';
 
 import Form from '../components/Index/Form'
 import HeadPromo from '../components/Index/HeadPromo'
@@ -92,7 +93,7 @@ class Wrapper extends Component {
 
                         <div className="col-md-4">
                             <div className="navbar-header">
-                                <a className="navbar-brand topnav" href="#">Электрим 2000</a>
+                                <a className="navbar-brand topnav" href="/">Электрим 2000</a>
                             </div>
 
                         </div>
@@ -120,6 +121,7 @@ class Wrapper extends Component {
                                     <ul className="dropdown-menu">
                                         <li><a href="#">О Нас</a></li>
                                         <li><a href="#">Лицензии и сертификаты</a></li>
+                                        <li><Link to="/review/">Отзывы</Link></li>
                                         <li><a href="#">Новости</a></li>
                                         <li><a href="#">Вакансии</a></li>
                                     </ul>
@@ -143,7 +145,9 @@ class Wrapper extends Component {
                         </div>
                     </div>
                 </nav>
-                <HeadPromo/>
+
+                {this.props.pathname === '/' ? <HeadPromo/> : false}
+
                 <main className="main container">
                     {this.props.children}
                     <hr className="primary"/>
@@ -193,7 +197,10 @@ class Wrapper extends Component {
 }
 
 function mapStateToProps(state) {
-    return {};
+    return {
+        screenType: state.screenType,
+        pathname : state.routing.locationBeforeTransitions.pathname
+    };
 }
 
 function mapDispatchToProps(dispatch, {params}) {

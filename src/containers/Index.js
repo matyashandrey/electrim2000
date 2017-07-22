@@ -231,7 +231,7 @@ class actionVirtus extends Component {
 
 function mapStateToProps(state) {
     return {
-        screenType: state.screenType
+
     };
 }
 
