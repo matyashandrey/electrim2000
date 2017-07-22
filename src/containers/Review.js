@@ -80,7 +80,7 @@ class Review extends Component {
 
             },
             {
-                title: 'ЗАО «А / Т табачная компания« В.А.Т.- Прилуки»',
+                title: 'ЗАО «А/Т табачная компания« В.А.Т.- Прилуки»',
                 text: ``,
                 autor: '',
                 logo: '/img/review/logo_7.jpg',
