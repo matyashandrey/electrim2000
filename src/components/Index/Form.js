@@ -18,7 +18,7 @@ class Form extends Component {
         return (
             <div className="row padding-15" style={{backgroundColor : '#d9edf7'}}>
                 <div className="col-lg-8 col-lg-offset-2 text-center">
-                    <h2> Закажите бесплатный выезд</h2>
+                    <h2>Закажите бесплатную консультацию у нашего технического специалиста</h2>
                 </div>
                 <div className="col-lg-12">
                     <div className="col-lg-6  text-left">

@@ -98,12 +98,12 @@ class CallbackForm extends Component {
             <Modal show={showModal} onHide={closeCallPopup}>
                 <form>
                     <Modal.Header closeButton>
-                        <Modal.Title>Чтобы заказать проект, заполните форму заявки</Modal.Title>
+                        <Modal.Title>Закажите бесплатный расчет стоимости по Вашему объекту</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className={classNameFio}>
                             <label htmlFor="usr">ФИО:</label>
-                            <input onChange={this.enterFIO} type="text" className="form-control"
+                            <input onChange={this.enterFIO} placeholder="Введите Ваше Имя" type="text" className="form-control"
                                    value={this.state.fio}/>
                             {error.fio ?
                                 <span className="glyphicon glyphicon-remove form-control-feedback"></span> : false}
@@ -112,7 +112,7 @@ class CallbackForm extends Component {
                         </div>
                         <div className={classNamePhone}>
                             <label htmlFor="pwd">Телефон:</label>
-                            <input onChange={this.enterPhone} type="text" className="form-control"
+                            <input  onChange={this.enterPhone} placeholder="Введите Ваш номер телефона" type="text" className="form-control"
                                    value={this.state.phone}/>
                             {error.phone ?
                                 <span className="glyphicon glyphicon-remove form-control-feedback"></span> : false}
